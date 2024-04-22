@@ -1,0 +1,26 @@
+
+/* .gallery{
+display: flex;
+gap: 38px 24px;
+flex-wrap: wrap;
+list-style: none;
+margin: 0 auto;
+} */
+
+.gallery{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+max-width: 70%;
+list-style: none;
+}
+
+/* .gallery-item{
+    width: 100%;
+} */ 
+
+.gallery-image{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
