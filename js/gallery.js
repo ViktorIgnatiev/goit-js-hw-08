@@ -89,4 +89,26 @@ return `<li class="gallery-item">
 
 galleryBox.innerHTML = galleryImagesList;
 
+
+galleryBox.addEventListener('click', (event) => {
+    event.preventDefault();
+    const image = event.target.closest(".gallery-image");
+    if (!image) { return }
+    const imageLink = image.getAttribute('data-source')
+    console.log(imageLink);
+
+    const { description } = images.find(img => img.original === imageLink);
+
+    const instance = basicLightbox.create(`
+		<img
+    class="modal-image"
+    src="${imageLink}"
+    alt="${description}"
+    />`)
+
+    instance.show()
+
+})
     
+
+
